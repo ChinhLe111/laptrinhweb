@@ -1,0 +1,2 @@
+D:\HUSC\Nam-4-ki-2\laptrinhweb\SV18T1021021\Devweb.BusinessLayer\obj\Debug\SV18T1021021.BusinessLayer.csproj.AssemblyReference.cache
+D:\HUSC\Nam-4-ki-2\laptrinhweb\SV18T1021021\Devweb.BusinessLayer\obj\Debug\SV18T1021021.BusinessLayer.csproj.CoreCompileInputs.cache
