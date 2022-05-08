@@ -1,0 +1,199 @@
+﻿@model SV18T1021021.DomainModel.Product
+@{ ViewBag.Title = "Bổ sung mặt hàng"; }
+
+<div class="box box-primary">
+    <div class="box-header with-border ">
+    </div>
+
+    <div class="box-body">
+        <form class="form-horizontal" action="~/product/save" method="post" enctype="multipart/form-data">
+
+            <input type="hidden" name="ProductID" value="@Model.ProductID" />
+
+            <div class="form-group">
+                <label class="control-label col-sm-2">Tên mặt hàng:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="ProductName" value="@Model.ProductName" autofocus>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Loại hàng:</label>
+                <div class="col-sm-10">
+                    <select class="form-control" name="categoryID">
+                        @foreach (var item in Model.categories)
+                        {
+                            <option value="@item.CategoryID">@item.CategoryName</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2"> Nhà cung cấp:</label>
+                <div class="col-sm-10">
+
+                    <select class="form-control" name="supplierID">
+                        @foreach (var item in Model.suppliers)
+                        {
+                            <option value="@item.SupplierID">@item.SupplierName</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Đơn vị tính:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="Unit" value="@Model.Unit" autofocus>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2">Giá hàng:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="Price" value="@Model.Price">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2">Ảnh minh họa:</label>
+                <div class="col-sm-10">
+                    <input type="file" class="form-control" name="uploadPhoto" accept="image/*"
+                           onchange="document.getElementById('Photo').src = window.URL.createObjectURL(this.files[0])" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-lg-offset-2 col-sm-10">
+                    <input type="hidden" name="Photo" value="@Model.Photo" />
+                    <img id="Photo" src="@Model.Photo" class="img img-bordered" style="width:200px" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fa fa-save"></i> Lưu dữ liệu
+                    </button>
+                    <a class="btn btn-warning" href="~/product">
+                        <i class="fa fa-ban"></i> Quay lại
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="box-footer text-center">
+    </div>
+
+</div>
+<div class="box box-info">
+    <div class="box-header with-border ">
+        <h3 class="box-title">Thư viện ảnh</h3>
+        <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="" data-original-title="Collapse">
+                <i class="fa fa-minus"></i>
+            </button>
+        </div>
+    </div>
+    <div class="box-body">
+        <table class="table table-bordered table-hover table-striped">
+            <thead>
+                <tr class="bg-gray">
+                    <th>Ảnh</th>
+                    <th>Mô tả/tiêu đề</th>
+                    <th>Thứ tự hiển thị</th>
+                    <th>Ẩn ảnh</th>
+                    <th class="text-right">
+                        <a class="btn btn-xs btn-primary" href="~/product/photo/add/111">
+                            <i class="fa fa-plus"></i>
+                        </a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td style="vertical-align:middle">
+                        <img src="@Model.Photo" alt="" style="width:100px" />
+                    </td>
+                    <td style="vertical-align:middle;">
+                        @Model.ProductID
+                    </td>
+                    <td style="vertical-align:middle;">@Model.ProductID</td>
+                    <td style="vertical-align:middle;"></td>
+                    <td style="vertical-align:middle; text-align:right">
+                        <a class="btn btn-xs btn-primary" href="~/product/photo/edit/111/222">
+                            <i class="fa fa-edit"></i>
+                        </a>
+                        <a class="btn btn-xs btn-danger" href="~/product/photo/delete/111/222" onclick="return confirm('Xóa ảnh của mặt hàng hay không?')">
+                            <i class="fa fa-trash-o"></i>
+                        </a>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <div class="box-footer text-center">
+    </div>
+
+</div>
+
+<div class="box box-success">
+    <div class="box-header with-border ">
+        <h3 class="box-title">Thuộc tính của mặt hàng</h3>
+        <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="" data-original-title="Collapse">
+                <i class="fa fa-minus"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="box-body">
+        <table class="table table-bordered table-hover table-striped">
+            <thead>
+                <tr class="bg-gray">
+                    <th>Tên thuộc tính</th>
+                    <th>Giá trị thuộc tính</th>
+                    <th>Thứ tự hiển thị</th>
+                    <th class="text-right">
+                        <a class="btn btn-xs btn-primary" href="~/product/attribute/add/111" onclick="return confirm('Xóa thuộc tính của mặt hàng?')">
+                            <i class="fa fa-plus"></i>
+                        </a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="vertical-align:middle">CPU</td>
+                    <td style="vertical-align:middle;">Intel Core i5 3337U 1.8GHz</td>
+                    <td style="vertical-align:middle;">1</td>
+                    <td style="vertical-align:middle; text-align:right">
+                        <a class="btn btn-xs btn-primary" href="~/product/attribute/edit/111/222">
+                            <i class="fa fa-edit"></i>
+                        </a>
+                        <a class="btn btn-xs btn-danger" href="~/product/attribute/delete/111/222">
+                            <i class="fa fa-trash-o"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align:middle">DISPLAY</td>
+                    <td style="vertical-align:middle;">15.6" Led 1600*900</td>
+                    <td style="vertical-align:middle;">2</td>
+                    <td style="vertical-align:middle; text-align:right">
+                        <a class="btn btn-xs btn-primary" href="~/product/edit-attribute/123">
+                            <i class="fa fa-edit"></i>
+                        </a>
+                        <a class="btn btn-xs btn-danger" href="~/product/delete-attribute/123">
+                            <i class="fa fa-trash-o"></i>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="box-footer text-center">
+    </div>
+
+</div>
+
+

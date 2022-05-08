@@ -1,0 +1,65 @@
+﻿@model SV18T1021021.Models.SupplierPaginationResultModel
+@{
+    Layout = null;
+}
+<div class="row" style="margin: 1px 0 10px 0;">
+    <div class="col-sm-12">
+        Có <strong>@Model.RowCount</strong> nhà cung cấp trong tổng số <strong>@Model.PageCount</strong> trang
+    </div>
+</div>
+<div class="table-responsive">
+    <table class="table table-bordered table-hover table-striped">
+        <thead>
+            <tr class="bg-primary">
+                <th>Tên nhà cung cấp</th>
+                <th>Tên giao dịch</th>
+                <th>Địa chỉ</th>
+                <th>Quốc gia</th>
+                <th>Thành phố</th>
+                <th>Mã bưu chính</th>
+                <th>Số điện thoại</th>
+                <th style="width:75px">&nbsp;
+                <th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Data)
+            {
+<tr>
+    <td>@item.SupplierName</td>
+    <td>@item.ContactName</td>
+    <td>@item.Address</td>
+    <td>@item.Country</td>
+    <td>@item.City</td>
+    <td>@item.PostalCode</td>
+    <td>@item.Phone</td>
+    <td class="text-right">
+        <a href="~/supplier/edit/@item.SupplierID" class="btn btn-xs btn btn-flat btn-info">
+            <i class="fa fa-edit"></i>
+        </a>
+        <a href="~/supplier/delete/@item.SupplierID" class="btn btn-xs btn btn-flat btn-danger">
+            <i class="fa fa-remove"></i>
+        </a>
+    </td>
+</tr>
+}
+        </tbody>
+
+    </table>
+</div>
+<div class="text-center">
+    <ul class="pagination">
+        @for (int i = 1; i <= Model.PageCount; i++)
+        {
+            if (i == Model.Page)
+            {
+<li class="active"><a href="#">@i</a></li>
+ }
+else
+{
+<li><a href="javascripts:;" onclick="doSearch(@i)">@i</a></li>
+}
+}
+    </ul>
+</div>
+

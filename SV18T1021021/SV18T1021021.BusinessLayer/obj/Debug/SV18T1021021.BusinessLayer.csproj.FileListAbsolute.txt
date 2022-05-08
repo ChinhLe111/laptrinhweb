@@ -1,0 +1,13 @@
+D:\HUSC\Nam-4-ki-2\laptrinhweb\SV18T1021021\Devweb.BusinessLayer\obj\Debug\SV18T1021021.BusinessLayer.csproj.AssemblyReference.cache
+D:\HUSC\Nam-4-ki-2\laptrinhweb\SV18T1021021\Devweb.BusinessLayer\obj\Debug\SV18T1021021.BusinessLayer.csproj.CoreCompileInputs.cache
+D:\HUSC\Nam-4-ki-2\Devweb\SV18T1021021\SV18T1021021.BusinessLayer\obj\Debug\SV18T1021021.BusinessLayer.csproj.AssemblyReference.cache
+D:\HUSC\Nam-4-ki-2\Devweb\SV18T1021021\SV18T1021021.BusinessLayer\obj\Debug\SV18T1021021.BusinessLayer.csproj.CoreCompileInputs.cache
+D:\HUSC\Nam-4-ki-2\Devweb\SV18T1021021\SV18T1021021.BusinessLayer\bin\Debug\Devweb.BusinessLayer.dll
+D:\HUSC\Nam-4-ki-2\Devweb\SV18T1021021\SV18T1021021.BusinessLayer\bin\Debug\Devweb.BusinessLayer.pdb
+D:\HUSC\Nam-4-ki-2\Devweb\SV18T1021021\SV18T1021021.BusinessLayer\bin\Debug\Devweb.DataLayer.dll
+D:\HUSC\Nam-4-ki-2\Devweb\SV18T1021021\SV18T1021021.BusinessLayer\bin\Debug\SV18T1021021.DomainModel.dll
+D:\HUSC\Nam-4-ki-2\Devweb\SV18T1021021\SV18T1021021.BusinessLayer\bin\Debug\Devweb.DataLayer.pdb
+D:\HUSC\Nam-4-ki-2\Devweb\SV18T1021021\SV18T1021021.BusinessLayer\bin\Debug\SV18T1021021.DomainModel.pdb
+D:\HUSC\Nam-4-ki-2\Devweb\SV18T1021021\SV18T1021021.BusinessLayer\obj\Debug\Devweb.BusinessLayer.dll
+D:\HUSC\Nam-4-ki-2\Devweb\SV18T1021021\SV18T1021021.BusinessLayer\obj\Debug\Devweb.BusinessLayer.pdb
+D:\HUSC\Nam-4-ki-2\Devweb\SV18T1021021\SV18T1021021.BusinessLayer\obj\Debug\SV18T1021021.BusinessLayer.csproj.CopyComplete

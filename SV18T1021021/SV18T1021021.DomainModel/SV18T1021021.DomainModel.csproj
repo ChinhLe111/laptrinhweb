@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{36D3B0F0-BB45-466A-817E-455B843A6B76}</ProjectGuid>
+    <ProjectGuid>{2B7266DE-FA58-494D-A6E6-EB3C430D3C48}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SV18T1021021.DomainModel</RootNamespace>
@@ -42,8 +42,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Category.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="Country.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="Employee.cs" />
+    <Compile Include="Product.cs" />
+    <Compile Include="ProductAttribute.cs" />
+    <Compile Include="ProductPhoto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shipper.cs" />
+    <Compile Include="Supplier.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

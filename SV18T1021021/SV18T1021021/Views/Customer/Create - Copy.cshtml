@@ -1,0 +1,94 @@
+﻿@model SV18T1021021.DomainModel.Customer
+@{ }
+
+<div class="box box-primary">
+    <div class="box-header with-border">
+
+    </div>
+    <div class="box-body">
+        <form class="form-horizontal" action="~/customer/save" method="post">
+
+            <input type="hidden" name="CustomerID" value="@Model.CustomerID" />
+
+            <div class="form-group">
+                <label class="control-label col-sm-2">Tên khách hàng:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="CustomerName" autofocus value="@Model.CustomerName">
+                    @Html.ValidationMessage("CustomerName", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Tên giao dịch:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="ContactName" value="@Model.ContactName">
+                    @Html.ValidationMessage("ContactName", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Tên địa chỉ:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="Address" value="@Model.Address">
+                    @Html.ValidationMessage("Address", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Quốc gia:</label>
+                <div class="col-sm-10">
+                    <select class="form-control" name="Country">
+                        @foreach (var country in SV18T1021021.BusinessLayer.CommonDataService.ListOfCountries())
+                        {
+                            if (country.CountryName == Model.Country)
+                            {
+            <option value="@country.CountryName" selected>
+                @country.CountryName
+            </option>
+ }
+        else
+        {
+        <option value="@country.CountryName" selected>
+            @country.CountryName
+        </option>
+}
+}
+
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Thành phố:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="City" value="@Model.City">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Mã bưu chính:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="PostalCode" value="@Model.PostalCode">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10 text-danger">
+                  @Html.ValidationSummary()
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fa fa-save"></i>Lưu dữ liệu
+                    </button>
+                    <a class="btn btn-warning" href="~/customer">
+                        <i class="fa fa-ban"></i> Quay lại
+                    </a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="box-footer text-center">
+
+    </div>
+
+</div>

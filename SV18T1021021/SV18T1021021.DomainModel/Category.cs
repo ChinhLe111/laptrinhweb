@@ -15,5 +15,7 @@ namespace SV18T1021021.DomainModel
         public string CategoryName { get; set; }
         //Mô tả
         public string Description { get; set; }
+        
+
     }
 }

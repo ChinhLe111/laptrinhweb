@@ -1,0 +1,52 @@
+﻿@model SV18T1021021.Models.PaginationSearchInput
+@{
+    ViewBag.Title = "Người giao hàng";
+}
+<!-- Default box -->
+<div class="box" style="">
+    <form id="searchInput" action="~/shipper/search" method="get">
+        <div class="input-group">
+            @Html.HiddenFor(m => m.PageSize)
+            <input type="text" name="searchValue"
+                   class="form-control"
+                   placeholder="Nhập tên hoặc địa chỉ người giao hàng cần tìm..." autofocus value="@Model.SearchValue">
+            <span class="input-group-btn">
+                <button type="submit" id="search-btn" class="btn btn-flat btn-info">
+                    <i class="fa fa-search"></i>
+                </button>
+                <a href="~/shipper/create" class="btn btn-flat btn-primary" style="margin-left:10px">
+                    <i class="fa fa-plus"></i>Bổ sung
+                </a>
+            </span>
+        </div>
+    </form>
+</div>
+<div id="searchResult">
+
+</div>
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            doSearch(@Model.Page);
+            $("#searchInput").submit(function (e) {
+                e.preventDefault();
+                doSearch(1);
+                return false;
+            });
+        });
+        function doSearch(page) {
+            var url = $("#searchInput").prop("action");
+            var input = $("#searchInput").serializeArray();
+            input.push({ "name": "page", "value": page });
+            //Gọi api customer/search để lấy dữ liệu
+            $.ajax({
+                type: "GET",
+                url: url,
+                data: input,
+                success: function(data){
+                    $("#searchResult").html(data)
+            }
+            });
+        }
+    </script>
+}

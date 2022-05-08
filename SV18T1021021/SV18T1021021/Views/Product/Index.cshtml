@@ -1,0 +1,105 @@
+﻿@model SV18T1021021.Web.Models.ProductPaginationResultModel
+@{
+    ViewBag.Title = "Mặt hàng";
+}
+
+<div class="box box-primary">
+    <div class="box-header with-border ">
+    </div>
+    <div class="box-body">
+
+        <form action="~/product" method="get">
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <select class="form-control" name="categoryID">
+                        <option value="0">-- Loại hàng --</option>
+                        @foreach (var item in Model.catID)
+                        {
+                            <option value="@item.CategoryID">@item.CategoryName</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-sm-3">
+                    <select class="form-control" name="supplierID">
+                        <option value="0">-- Nhà cung cấp --</option>
+                        @foreach (var item in Model.supID)
+                        {
+                            <option value="@item.SupplierID">@item.SupplierName</option>
+}
+                    </select>
+                </div>
+                <div class="col-sm-6 input-group">
+                    <input type="text" name="searchValue"
+                           class="form-control"
+                           placeholder="Nhập tên mặt hàng cần tìm" value="@Model.SearchValue">
+                    <span class="input-group-btn">
+                        <button type="submit" name="search" id="search-btn" class="btn btn-flat btn-info">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        <a href="~/product/create"
+                           class="btn btn-flat btn-primary"
+                           style="margin-left:5px;">
+                            <i class="fa fa-plus"></i> Bổ sung
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </form>
+
+        <p style="margin:10px 0 10px 0">
+            Có <strong>@Model.RowCount</strong> mặt hàng trong tổng số <strong>@Model.Page</strong> trang
+        </p>
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover table-striped">
+                <thead>
+                    <tr class="bg-primary">
+                        <th style="width:80px">Ảnh</th>
+                        <th>Tên mặt hàng</th>
+                        <th>Đơn vị tính</th>
+                        <th>Giá</th>
+                        <th style="width:75px">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Data)
+                    {
+                        <tr>
+                            <td>
+                                <img class="profile-user-img img-responsive img-bordered" src="@item.Photo" style="width:80px" />
+                            </td>
+                            <td style="vertical-align:middle">@item.ProductName</td>
+                            <td style="vertical-align:middle">@item.Unit</td>
+                            <td style="vertical-align:middle">@item.Price</td>
+                            <td class="text-right" style="vertical-align:middle">
+                                <a href="~/product/edit/@item.ProductID" class="btn btn-xs btn-flat btn-info">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+                                <a href="~/product/delete/@item.ProductID" class="btn btn-xs btn-flat btn-danger">
+                                    <i class="fa fa-remove"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="box-footer text-center">
+        <ul class="pagination">
+            @for (int i = 1; i <= Model.PageCount; i++)
+            {
+                if (i == Model.Page)
+                {
+                    <li class="active"><a href="#">@i</a></li>
+                }
+                else
+                {
+                    <li><a href="~/product?page=@i&seachValue=@Model.SearchValue">@i</a></li>
+                }
+            }
+        </ul>
+    </div>
+</div>

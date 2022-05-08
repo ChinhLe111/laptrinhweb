@@ -1,4 +1,0 @@
-D:\HUSC\Nam-4-ki-2\laptrinhweb\SV18T1021021\Laptrinhweb.Web\obj\Debug\SV18T1021021.Web.csproj.AssemblyReference.cache
-D:\HUSC\Nam-4-ki-2\laptrinhweb\SV18T1021021\Laptrinhweb.Web\obj\Debug\SV18T1021021.Web.csproj.CoreCompileInputs.cache
-D:\HUSC\Nam-4-ki-2\laptrinhweb\SV18T1021021\Laptrinhweb.Web\obj\Debug\Laptrinhweb.Web.dll
-D:\HUSC\Nam-4-ki-2\laptrinhweb\SV18T1021021\Laptrinhweb.Web\obj\Debug\Laptrinhweb.Web.pdb

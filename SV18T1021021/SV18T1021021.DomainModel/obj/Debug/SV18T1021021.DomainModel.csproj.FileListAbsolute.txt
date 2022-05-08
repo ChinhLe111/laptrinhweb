@@ -4,3 +4,8 @@ D:\HUSC\Nam-4-ki-2\laptrinhweb\SV18T1021021\SV18T1021021.DomainModel\obj\Debug\S
 D:\HUSC\Nam-4-ki-2\laptrinhweb\SV18T1021021\SV18T1021021.DomainModel\obj\Debug\SV18T1021021.DomainModel.csproj.CoreCompileInputs.cache
 D:\HUSC\Nam-4-ki-2\laptrinhweb\SV18T1021021\SV18T1021021.DomainModel\obj\Debug\SV18T1021021.DomainModel.dll
 D:\HUSC\Nam-4-ki-2\laptrinhweb\SV18T1021021\SV18T1021021.DomainModel\obj\Debug\SV18T1021021.DomainModel.pdb
+D:\HUSC\Nam-4-ki-2\Devweb\SV18T1021021\SV18T1021021.DomainModel\bin\Debug\SV18T1021021.DomainModel.dll
+D:\HUSC\Nam-4-ki-2\Devweb\SV18T1021021\SV18T1021021.DomainModel\bin\Debug\SV18T1021021.DomainModel.pdb
+D:\HUSC\Nam-4-ki-2\Devweb\SV18T1021021\SV18T1021021.DomainModel\obj\Debug\SV18T1021021.DomainModel.csproj.CoreCompileInputs.cache
+D:\HUSC\Nam-4-ki-2\Devweb\SV18T1021021\SV18T1021021.DomainModel\obj\Debug\SV18T1021021.DomainModel.dll
+D:\HUSC\Nam-4-ki-2\Devweb\SV18T1021021\SV18T1021021.DomainModel\obj\Debug\SV18T1021021.DomainModel.pdb
